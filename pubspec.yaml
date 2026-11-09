@@ -1,0 +1,18 @@
+name: pm_pertemuan_07_4243250056
+description: Praktikum Pertemuan 7 - Katalog Oleh-Oleh Medan dengan Provider dan Cubit
+publish_to: none
+version: 1.0.0+1
+environment:
+  sdk: '>=3.13.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  material_ui: ^1.9.0
+  go_router: ^18.0.0
+  provider: ^6.1.5+1
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true
