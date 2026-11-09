@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'data.dart';
 import 'halaman_detail.dart';
@@ -8,10 +8,10 @@ import 'halaman_katalog.dart';
 import 'halaman_kategori.dart';
 import 'halaman_keranjang.dart';
 import 'halaman_tentang.dart';
-import 'keranjang_model.dart';
+import 'keranjang_cubit.dart';
 
 void main() => runApp(
-  ChangeNotifierProvider(create: (_) => KeranjangModel(), child: const KatalogApp()),
+  BlocProvider(create: (_) => KeranjangCubit(), child: const KatalogApp()),
 );
 
 final router = GoRouter(
@@ -61,7 +61,7 @@ class KerangkaNavigasi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lebar = MediaQuery.sizeOf(context).width;
-    final jumlah = context.select((KeranjangModel k) => k.jumlahItem);
+    final jumlah = context.select((KeranjangCubit c) => c.state.jumlahItem);
     final iconKeranjang = Badge.count(
       count: jumlah,
       isLabelVisible: jumlah > 0,

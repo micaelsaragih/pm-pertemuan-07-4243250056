@@ -1,8 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'data.dart';
-import 'keranjang_model.dart';
+import 'keranjang_cubit.dart';
 
 class HalamanDetail extends StatelessWidget {
   const HalamanDetail({super.key, required this.produk});
@@ -17,7 +17,7 @@ class HalamanDetail extends StatelessWidget {
     }
     final skema = Theme.of(context).colorScheme;
     final teks = Theme.of(context).textTheme;
-    final diKeranjang = context.select((KeranjangModel k) => k.jumlahDari(p.id));
+    final diKeranjang = context.select((KeranjangCubit c) => c.state.jumlahDari(p.id));
     final gambar = Hero(tag: 'produk-${p.id}', child: AspectRatio(aspectRatio: 4 / 3,
       child: ColoredBox(color: p.warna.withValues(alpha: 0.15),
         child: Center(child: Icon(p.ikon, size: 120, color: p.warna)))));
@@ -33,7 +33,7 @@ class HalamanDetail extends StatelessWidget {
         Text(p.deskripsi, style: teks.bodyLarge),
         const SizedBox(height: 24),
         FilledButton.icon(
-          onPressed: () => context.read<KeranjangModel>().tambah(p),
+          onPressed: () => context.read<KeranjangCubit>().tambah(p),
           icon: const Icon(Icons.add_shopping_cart),
           label: Text(diKeranjang == 0
             ? 'Tambah ke keranjang'

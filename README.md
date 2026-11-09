@@ -2,7 +2,7 @@
 
 **Micael Zecsen Saragih | 4243250056 | PSIK24D | Ilmu Komputer UNIMED**
 
-Kelanjutan katalog oleh-oleh Pertemuan 6. Cabang `keranjang-provider` memakai `ChangeNotifierProvider`; cabang `keranjang-cubit` memakai `BlocProvider` dan state immutable. Branch `main` menggunakan Provider sebagai versi awal yang dapat dijalankan.
+Kelanjutan katalog oleh-oleh Pertemuan 6. Cabang `keranjang-provider` memakai `ChangeNotifierProvider`; cabang `keranjang-cubit` memakai `BlocProvider` dan state immutable. Branch `keranjang-cubit` berisi versi Cubit lengkap.
 
 ## Fitur
 - Katalog enam produk, FilterChip, halaman kategori, Hero, detail responsif, halaman Tentang
@@ -35,3 +35,6 @@ Gunakan `flutter create` hanya sekali untuk melengkapi folder platform yang belu
 | Pilihan proyek | Cocok untuk skala kecil–menengah | Cocok ketika alur perubahan perlu lebih eksplisit |
 
 Dokumentasi screenshot dan verifikasi runtime ditambahkan setelah diuji di laptop. Penggunaan AI: AI membantu implementasi kode dan dokumentasi; pengujian aplikasi dan bukti pelaksanaan diperiksa pengguna.
+
+
+**Cabang aktif:** `keranjang-cubit`; gunakan `flutter pub get` setelah berpindah branch. Checkout ditangani oleh `BlocConsumer` (listener untuk SnackBar).
