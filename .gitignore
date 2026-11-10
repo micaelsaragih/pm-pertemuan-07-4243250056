@@ -1,9 +1,8 @@
 .dart_tool/
-.packages
-.pub/
 build/
-.flutter-plugins
-.flutter-plugins-dependencies
 .idea/
 *.iml
-.DS_Store
+.flutter-plugins-dependencies
+.metadata
+.worktrees/
+Paket_Aset_Praktikum_07/

@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+
 import 'data.dart';
 
 class ItemKeranjang {
@@ -11,23 +12,28 @@ class ItemKeranjang {
 class KeranjangModel extends ChangeNotifier {
   final Map<int, int> _isi = {};
   List<ItemKeranjang> get item => [
-    for (final entry in _isi.entries)
-      if (cariProduk(entry.key) case final Produk produk)
-        ItemKeranjang(produk, entry.value),
+    for (final e in _isi.entries)
+      if (cariProduk(e.key) case final Produk p) ItemKeranjang(p, e.value),
   ];
   int get jumlahItem => _isi.values.fold(0, (a, b) => a + b);
-  int get total => item.fold(0, (sum, element) => sum + element.subtotal);
-  int jumlahDari(int idProduk) => _isi[idProduk] ?? 0;
-  void tambah(Produk produk) {
-    _isi.update(produk.id, (n) => n + 1, ifAbsent: () => 1);
+  int get total => item.fold(0, (s, e) => s + e.subtotal);
+  int jumlahDari(int id) => _isi[id] ?? 0;
+  void tambah(Produk p) {
+    _isi.update(p.id, (n) => n + 1, ifAbsent: () => 1);
     notifyListeners();
   }
-  void kurangi(Produk produk) {
-    final jumlah = _isi[produk.id];
-    if (jumlah == null) return;
-    if (jumlah == 1) { _isi.remove(produk.id); } else { _isi[produk.id] = jumlah - 1; }
+
+  void kurangi(Produk p) {
+    final n = _isi[p.id];
+    if (n == null) return;
+    if (n == 1) {
+      _isi.remove(p.id);
+    } else {
+      _isi[p.id] = n - 1;
+    }
     notifyListeners();
   }
+
   void kosongkan() {
     if (_isi.isEmpty) return;
     _isi.clear();

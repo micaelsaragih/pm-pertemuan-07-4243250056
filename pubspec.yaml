@@ -1,5 +1,5 @@
 name: pm_pertemuan_07_4243250056
-description: Praktikum Pertemuan 7 - Katalog Oleh-Oleh Medan dengan Provider dan Cubit
+description: "Praktikum 7 - Katalog Oleh-Oleh Medan: Provider dan Cubit"
 publish_to: none
 version: 1.0.0+1
 environment:
@@ -16,3 +16,6 @@ dev_dependencies:
   flutter_lints: ^6.0.0
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+
