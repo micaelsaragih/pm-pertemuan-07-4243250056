@@ -34,6 +34,10 @@ Gunakan `flutter create` hanya sekali untuk melengkapi folder platform yang belu
 | Pengujian | Unit test tanpa widget | Unit test tanpa widget; state immutable |
 | Pilihan proyek | Cocok untuk skala kecil–menengah | Cocok ketika alur perubahan perlu lebih eksplisit |
 
+## Atribusi Aset Foto
+
+Foto produk pada aplikasi ini bersumber dari Wikimedia Commons untuk keperluan tugas akademik dan merupakan ilustrasi representatif generik (bukan foto resmi merek/kemasan produk). Seluruh kredit fotografer, lisensi (Creative Commons), tautan sumber, dan keterangan modifikasi terdokumentasi lengkap pada [docs/KREDIT_FOTO.md](docs/KREDIT_FOTO.md).
+
 Dokumentasi screenshot dan verifikasi runtime ditambahkan setelah diuji di laptop. Penggunaan AI: AI membantu implementasi kode dan dokumentasi; pengujian aplikasi dan bukti pelaksanaan diperiksa pengguna.
 
 

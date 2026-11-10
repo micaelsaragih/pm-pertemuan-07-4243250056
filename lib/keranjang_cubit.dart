@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'data.dart';
 
 class ItemKeranjang {
@@ -11,7 +12,7 @@ class ItemKeranjang {
 /// State value baru tiap perubahan; map disalin dan tidak diekspos sebagai mutable.
 class KeranjangState {
   KeranjangState([Map<int, int> isi = const {}, this.checkoutRevision = 0])
-      : isi = Map.unmodifiable(isi);
+    : isi = Map.unmodifiable(isi);
   final Map<int, int> isi;
   final int checkoutRevision;
   List<ItemKeranjang> get item => [
@@ -37,7 +38,11 @@ class KeranjangCubit extends Cubit<KeranjangState> {
     final n = state.isi[p.id];
     if (n == null) return;
     final baru = Map<int, int>.of(state.isi);
-    if (n <= 1) { baru.remove(p.id); } else { baru[p.id] = n - 1; }
+    if (n <= 1) {
+      baru.remove(p.id);
+    } else {
+      baru[p.id] = n - 1;
+    }
     emit(KeranjangState(baru, state.checkoutRevision));
   }
 

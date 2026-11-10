@@ -10,8 +10,9 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
-    await tester.pumpWidget(BlocProvider(
-      create: (_) => KeranjangCubit(), child: const KatalogApp()));
+    await tester.pumpWidget(
+      BlocProvider(create: (_) => KeranjangCubit(), child: const KatalogApp()),
+    );
     await tester.pumpAndSettle();
     expect(find.text('Kopi Sidikalang'), findsOneWidget);
     await tester.tap(find.text('Kue'));
@@ -25,8 +26,9 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
-    await tester.pumpWidget(BlocProvider(
-      create: (_) => KeranjangCubit(), child: const KatalogApp()));
+    await tester.pumpWidget(
+      BlocProvider(create: (_) => KeranjangCubit(), child: const KatalogApp()),
+    );
     await tester.pumpAndSettle();
     await tester.tap(find.text('Kopi Sidikalang'));
     await tester.pumpAndSettle();
@@ -38,8 +40,9 @@ void main() {
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
-    await tester.pumpWidget(BlocProvider(
-      create: (_) => KeranjangCubit(), child: const KatalogApp()));
+    await tester.pumpWidget(
+      BlocProvider(create: (_) => KeranjangCubit(), child: const KatalogApp()),
+    );
     await tester.pumpAndSettle();
     expect(find.byType(NavigationRail), findsOneWidget);
   });
